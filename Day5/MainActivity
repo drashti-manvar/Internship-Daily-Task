@@ -1,0 +1,78 @@
+package com.example.registration;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    String str;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+       final EditText name = findViewById(R.id.name);
+        EditText hobbies = findViewById(R.id.hobbies);
+        EditText number= findViewById(R.id.number);
+        EditText email = findViewById(R.id.email);
+        EditText pass = findViewById(R.id.pass);
+        TextView t1 = findViewById(R.id.t1);
+        TextView t2 = findViewById(R.id.t2);
+        Button b1 = findViewById(R.id.b1);
+        RadioButton r1 = findViewById(R.id.r1);
+        RadioButton r2 = findViewById(R.id.r2);
+
+
+        public void onRadioButtonClicked(View  view;)
+        {
+            boolean checked = (RadioButton) view)r1.isChecked();
+        }
+
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+
+                String Name= name.getText().toString();
+                String R = r1.getText().toString();
+                String R2 = r2.getText().toString();
+                String Hobbies= hobbies.getText().toString();
+                String Number = number.getText().toString();
+                String Email = email.getText().toString();
+                String Pass = pass.getText().toString();
+
+
+                Intent in = new Intent ( MainActivity.this,Second_activity.class);
+                in.putExtra("NAME :-",Name);
+                in.putExtra("GENDER :-",Male);
+                in.putExtra("HOBBIES :-",Hobbies);
+                in.putExtra("NUMBER :-",Number);
+                in.putExtra("EMAIL :-",Email);
+                in.putExtra("PASSWORD :-",Pass);
+
+
+
+
+                startActivity(in);
+            }
+        });
+
+
+
+
+
+    }
+
+
+}
